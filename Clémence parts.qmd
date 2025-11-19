@@ -63,7 +63,6 @@ importation librairies
 
 ```
 
-
 # 2. Data set up
 
 cleaning joining merging
