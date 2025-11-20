@@ -56,6 +56,8 @@ here::i_am('Data_management_Project.Rproj')
 
 ### 1.3.1 Historical exposure to extreme temperatures
 
+This data set displays the share of population exposed to hot temperature from 1979 to 2024. The temperature threshold is 35°C.
+
 ```{r}
 Temperature_exposure<-read_excel("raw_data/OECD.ENV.EPI,DSD_ECH@EXT_TEMP_H,2.0,filtered,2025-11-19 13-23-57.xlsx", skip=8)
 ```
@@ -72,6 +74,8 @@ Temperature_exposure |>
 
 ### 1.3.2 Human Development index
 
+This data set shows the HDI rank for all countries in 2023 compared to the 2022 rank. It displays the life expectancy at birth, the expected years of schooling and the Gross National Income per capita used to compute the HDI.
+
 ```{r}
 HDI <- read_excel("raw_data/HDR25_Statistical_Annex_HDI_Table.xlsx.", skip=4)
 ```
@@ -87,8 +91,9 @@ HDI |>
 
 ### 1.3.3 Income share of the top 10%
 
+
 ```{r}
-Top_10 <- vroom(here("data_file/WID_Data_Metadata", "WID_Data_19112025-132927.csv"), delim=";",skip=1)#need to skip the first raw
+Top_10 <- vroom(here("data_file/WID_Data_Metadata", "WID_Data_19112025-132927.csv"), delim=";",skip=1) #need to skip the first raw
 ```
 ```{r}
 Top_10 |> 
