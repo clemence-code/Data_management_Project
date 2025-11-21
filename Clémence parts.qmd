@@ -36,8 +36,6 @@ Methodologically, the project will involve selecting, normalising and aggregatin
 
 ## 1.3 Description of the data file
 
-## 1.3.0 Set up
-
 ### 1.3.0 Set up
 
 ```{r}
@@ -236,8 +234,6 @@ EPS_index_summary |>
 
 ### 1.3.5 Share of electricity from renewable resources
 
-Ember’s yearly electricity dataset provides, for each country, the breakdown of electricity generation by source (coal, gas, nuclear, hydro, wind, solar, etc.), with a particular focus on renewable technologies. It enables the construction of indicators such as the share of renewables in electricity generation, which serve as proxies for the pace of the energy transition and adaptive capacity.
-
 ```{r}
 Renewable_Electricity_Share<- vroom(here("raw_data", "yearly_full_release_long_format.csv"))
 ```
@@ -253,8 +249,6 @@ Renewable_Electricity_Share |>
 ```
 
 ### 1.3.6 Per capita energy use
-
-This World Bank indicator reports total primary energy consumption per capita, expressed in kilograms of oil equivalent, for a large set of countries over time.
 
 ```{r}
 PC_Energy_Use<- vroom(here("data_file", "Metadata_Country_API_EG.USE.ELEC.KH.PC_DS2_en_csv_v2_129274.csv"))
@@ -272,14 +266,12 @@ PC_Energy_Use |>
 
 ### 1.3.7 Research and development as a share of GDP
 
-This dataset provides annual data on gross domestic expenditure on research and development (GERD) as a percentage of GDP for many countries. It measures the scale of a country’s investment in innovation and knowledge creation, including in climate- and environment-related technologies, and is therefore a useful proxy for adaptive and transformative capacity.
-
 ```{r}
-RD_share_of_GDP<- vroom(here("data_file", "API_GB.XPD.RSDV.GD.ZS_DS2_en_csv_v2_216043.csv"), skip=4)
+RandD_share_of_GDP<- vroom(here("data_file", "API_GB.XPD.RSDV.GD.ZS_DS2_en_csv_v2_216043.csv"), skip=4)
 ```
 
 ```{r}
-RD_share_of_GDP |> 
+RandD_share_of_GDP |> 
   summarise(
     number_of_rows = n(),
     number_of_columns = ncol(across()),
@@ -476,6 +468,6 @@ WDI |>
   knitr::kable()
 ```
 
-# 2. Data set up
+# 2. Data joining
 
-cleaning joining merging
+
