@@ -11,7 +11,7 @@ editor: visual
 
 ## 1.1 Description of the project - Research question
 
-The objective of this project is to construct a climate vulnerability index that allows a systematic comparison of countries in terms of their vulnerability to climate change. Rather than relying on existing composite indicators, we propose to design our own multidimensional index built around three core dimensions widely used in the literature: Exposure, Sensitivity, and Adaptive Capacity. By explicitly combining these dimensions using transparent data and methods, we aim to better understand which structural factors drive a country’s vulnerability and to identify profiles of countries that may require differentiated policy responses.
+The objective of this project is to construct a climate vulnerability index that allows a systematic comparison of countries in terms of their vulnerability to climate change. Rather than relying on existing composite indicators, we propose to design our own multidimensional index built around three core dimensions widely used in the literature: Exposure, Sensitivity, and Adaptive Capacity. By explicitly combining these dimensions using transparent data and methods, we aim to better understand which structural factors drive a country’s vulnerability and to identify profiles of countries that may require differentiated policy responses. This leads us to the following research question: How can a composite climate vulnerability index be used to compare countries and support more targeted and equitable climate adaptation policies?
 
 The first dimension, Exposure, measures the degree to which each country is physically exposed to climate-related hazards. In this project, exposure will be captured using indicators from the OECD and related sources that reflect the frequency and intensity of climate hazards, as well as the extent of populations and territories at risk. The guiding idea is that two countries may differ strongly in their baseline exposure even before considering their socio-economic characteristics or institutional responses.
 
@@ -22,17 +22,15 @@ The third dimension, Adaptive Capacity, captures the ability of a country to ant
 Methodologically, the project will involve selecting, normalising and aggregating indicators within each dimension, and then combining the three dimensions into a composite index of climate vulnerability. We will carefully examine correlations between variables to avoid redundancy and ensure that each indicator brings distinct information. Different weighting schemes (equal weights, data-driven weights, or robustness checks with alternative specifications) may be compared. Finally, the resulting index will be analysed descriptively to identify patterns of vulnerability across countries (for example, highly exposed but relatively resilient countries versus highly sensitive and poorly equipped ones).
 
 ## 1.2 Description of data sources
-
--   OECD : The Organisation for Economic Co-operation and Development (OECD), headquartered in Paris (France), is an international organisation of 38 member countries committed to democracy and the market economy. Its mission is to promote policies that foster sustainable economic growth, employment, rising living standards while supporting economic development worldwide. The OECD also plays a key role in producing harmonised, comparable statistics and indicators across countries.
-    -   [Historical exposure to extreme temperatures (0ECD, 1979-2024)](https://data-explorer.oecd.org/vis?bp=true&df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_ECH%40EXT_TEMP_H&df%5Bag%5D=OECD.ENV.EPI&df%5Bvs%5D=2.0&dq=AFG%2BBFA%2BBDI%2BCAF%2BTCD%2BSWZ%2BETH%2BGUF%2BATF%2BGLP%2BHMD%2BVAT%2BKAZ%2BXKV%2BKGZ%2BLAO%2BLSO%2BLIE%2BMWI%2BMLI%2BMTQ%2BMDA%2BMNG%2BNPL%2BNER%2BNFK%2BMKD%2BPRY%2BREU%2BRWA%2BSMR%2BSRB%2BSGS%2BSSD%2BTJK%2BTKM%2BUGA%2BUMI%2BUZB%2BZMB%2BZWE%2BIOT%2BBVT%2BBWA%2BBOL%2BBTN%2BBLR%2BAZE%2BARM%2BAND%2BCHE%2BSVK%2BLUX%2BHUN%2BCZE%2BAUT%2BALB%2BDZA%2BASM%2BAGO%2BAIA%2BATG%2BARG%2BABW%2BBHS%2BBHR%2BGGY%2BBGD%2BBRB%2BBLZ%2BBEN%2BBMU%2BBIH%2BBRA%2BVGB%2BBRN%2BBGR%2BCPV%2BKHM%2BCMR%2BCYM%2BCHN%2BCXR%2BCOM%2BCOG%2BCOK%2BCIV%2BHRV%2BCUB%2BCYP%2BPRK%2BCOD%2BDJI%2BDMA%2BDOM%2BECU%2BEGY%2BSLV%2BGNQ%2BERI%2BFRO%2BFJI%2BPYF%2BGAB%2BGMB%2BGEO%2BGHA%2BGRL%2BGRD%2BGUM%2BGTM%2BGIN%2BGNB%2BGUY%2BHTI%2BHND%2BHKG%2BIND%2BIDN%2BIRN%2BIRQ%2BIMN%2BJAM%2BJEY%2BJOR%2BKEN%2BKIR%2BKWT%2BLBN%2BLBR%2BLBY%2BMAC%2BMDG%2BMYS%2BMDV%2BMLT%2BMHL%2BMRT%2BMUS%2BMYT%2BFSM%2BMCO%2BMNE%2BMSR%2BMAR%2BMOZ%2BMMR%2BNAM%2BNRU%2BNCL%2BNIC%2BNGA%2BNIU%2BMNP%2BOMN%2BPAK%2BPLW%2BPSE%2BPAN%2BPNG%2BPER%2BPHL%2BPCN%2BPRI%2BQAT%2BROU%2BRUS%2BSHN%2BKNA%2BLCA%2BSPM%2BVCT%2BWSM%2BSTP%2BSAU%2BSEN%2BSYC%2BSLE%2BSGP%2BSLB%2BSOM%2BZAF%2BLKA%2BSDN%2BSUR%2BSJM%2BSYR%2BTWN%2BTZA%2BTHA%2BTLS%2BTGO%2BTKL%2BTON%2BTTO%2BTUN%2BTCA%2BTUV%2BUKR%2BARE%2BVIR%2BURY%2BVUT%2BVEN%2BVNM%2BWLF%2BESH%2BYEM%2BAU1%2BAU2%2BAU3%2BAU4%2BAU5%2BAU6%2BAU7%2BAU8%2BAUS%2BBEL%2BCAN%2BCHL%2BCOL%2BCRI%2BDNK%2BEST%2BFIN%2BFRA%2BDEU%2BGRC%2BISL%2BIRL%2BISR%2BITA%2BJPN%2BKOR%2BLVA%2BLTU%2BMEX%2BNLD%2BNZL%2BNOR%2BPOL%2BPRT%2BSVN%2BESP%2BSWE%2BTUR%2BGBR%2BUSA%2BG7%2BG20%2BEA19%2BEU27%2BOECD%2BOECDA%2BOECDSO%2BOECDE%2BAES%2BEMES%2BIPAC.A..........&fc=Topic&fs%5B0%5D=Topic%2C1%7CEnvironment%20and%20climate%20change%23ENV%23%7CAir%20and%20climate%23ENV_AC%23&pg=0&snb=13&to%5BTIME_PERIOD%5D=false&pd=%2C&vw=tb) For the temperature exposure data, we downloaded the series directly from the OECD Data Explorer by selecting the indicator “Historical exposure to extreme temperature” and country level data. The combined unit of measure was set to “percentage of population,” which yields the annual share of each country’s population exposed to days above 35°C. Using these filters, we obtained a dataset of 8 740 observations.
-
-    -   [Environmental Policy Stringency indicator (EPS)](https://data-explorer.oecd.org/vis?lc=en&tm=environmental%20policy&pg=0&snb=94&df%5bds%5d=dsDisseminateFinalDMZ&df%5bid%5d=DSD_EPS%40DF_EPS&df%5bag%5d=OECD.ECO.MAD&df%5bvs%5d=1.0&dq=.A..EPS&to%5bTIME_PERIOD%5d=false&pd=%2C&vw=tb)
--   United Nations Development Programme (UNDP) - Human development Report Office : UNDP is the UN’s global development network, working in around 170 countries and territories to eradicate poverty, reduce inequalities and build resilient institutions. Within UNDP, the Human Development Report Office (HDRO) is responsible for producing the annual Human Development Report and developing the Human Development Index (HDI) and related indicators, which provide a multidimensional view of development by combining health, education and income measures. [Index of Human Development (1990-2025)](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
--   World inequality database : The World Inequality Lab is a research centre based at the Paris School of Economics, bringing together economists and social scientists to study global and national inequalities in income, wealth and carbon emissions. It manages and develops the World Inequality Database (WID.world), which compiles harmonised, long-run series on the distribution of income and wealth, based on a combination of tax data, national accounts, surveys and other sources, with the aim of informing public debate and policy on inequality. [Income share of the top 10% and top 10% carbon emitters (1980-2023)](https://wid.world/data/)
--   EMBER : Ember is an independent, non-profit energy and climate think tank that focuses on accelerating the global transition from coal to clean electricity. The organisation analyses power sector data worldwide and publishes open datasets and reports with the objective of providing evidence-based insights to policymakers. [Electricity production from renewable sources (1985-2024)](https://ember-energy.org/data/yearly-electricity-data/)
--   World bank : The World Bank is an international financial institution headquartered in Washington, D.C., whose core mandate is to reduce poverty and promote sustainable development in low- and middle-income countries through financial support, technical assistance and policy advice. Beyond lending, the World Bank is one of the world’s main producers and disseminators of development statistics.
+-   [OECD](https://www.oecd.org/en/data.html) : The Organisation for Economic Co-operation and Development (OECD), headquartered in Paris (France), is an international organisation of 38 member countries committed to democracy and the market economy. Its mission is to promote policies that foster sustainable economic growth, employment, rising living standards while supporting economic development worldwide. The OECD also plays a key role in producing harmonised, comparable statistics and indicators across countries.
+    -   [Historical exposure to extreme temperatures (0ECD, 1979-2024)](https://data-explorer.oecd.org/vis?lc=en&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_ECH%40EXT_TEMP_H&df[ag]=OECD.ENV.EPI&df[vs]=2.0&dq=.A.HD_POP_EXP.........&pd=%2C&to[TIME_PERIOD]=false) For the temperature exposure data, we downloaded the series directly from the OECD Data Explorer by selecting the indicator “Historical exposure to extreme temperature” and country level data. The combined unit of measure was set to “percentage of population,” which yields the annual share of each country’s population exposed to days above 35°C. Using these filters, we obtained a dataset of 8 740 observations.
+    - [Environmental Policy Stringency indicator (EPS)](https://data-explorer.oecd.org/vis?lc=en&tm=environmental%20policy&pg=0&snb=94&df%5bds%5d=dsDisseminateFinalDMZ&df%5bid%5d=DSD_EPS%40DF_EPS&df%5bag%5d=OECD.ECO.MAD&df%5bvs%5d=1.0&dq=.A..EPS&to%5bTIME_PERIOD%5d=false&pd=%2C&vw=tb)
+    - [GDP expenditure on Research and Develoment](https://data-explorer.oecd.org/vis?lc=en&tm=msti&snb=1&vw=tb&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_MSTI%40DF_MSTI&df[ag]=OECD.STI.STP&df[vs]=&pd=1990%2C2024&dq=.A.G.PT_B1GQ..&to[TIME_PERIOD]=false)
+-   [United Nations Development Programme (UNDP) - Human development Report Office](https://hdr.undp.org/) : UNDP is the UN’s global development network, working in around 170 countries and territories to eradicate poverty, reduce inequalities and build resilient institutions. Within UNDP, the Human Development Report Office (HDRO) is responsible for producing the annual Human Development Report and developing the Human Development Index (HDI) and related indicators, which provide a multidimensional view of development by combining health, education and income measures. [Index of Human Development (1990-2025)](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
+-   [World Inequality Database](https://wid.world/) : The World Inequality Lab is a research centre based at the Paris School of Economics, bringing together economists and social scientists to study global and national inequalities in income, wealth and carbon emissions. It manages and develops the World Inequality Database (WID.world), which compiles harmonised, long-run series on the distribution of income and wealth, based on a combination of tax data, national accounts, surveys and other sources, with the aim of informing public debate and policy on inequality. [Income share of the top 10% and top 10% carbon emitters (1980-2023)](https://wid.world/data/)
+-   [IRENA](https://www.irena.org/) : IRENA is an intergovernmental agency that supports countries worldwide in their transition to a sustainable energy future by promoting renewable energy, providing data and analysis, and advising on energy policies and investments.[Electricity production from renewable sources (2000-2024)](https://pxweb.irena.org/pxweb/en/IRENASTAT)
+-   [World bank](https://data.worldbank.org/) : The World Bank is an international financial institution headquartered in Washington, D.C., whose core mandate is to reduce poverty and promote sustainable development in low- and middle-income countries through financial support, technical assistance and policy advice. Beyond lending, the World Bank is one of the world’s main producers and disseminators of development statistics.
     -   [Per capita energy use (1990-2023)](https://data.worldbank.org/indicator/EG.USE.PCAP.KG.OE)
-    -   [R&D spending as a share of GDP (1996-2023)](https://data.worldbank.org/indicator/GB.XPD.RSDV.GD.ZS)
 
 ## 1.3 Description of the data file
 
@@ -234,24 +232,70 @@ EPS_index_summary |>
 
 ### 1.3.5 Share of electricity from renewable resources
 
+Ember’s yearly electricity dataset provides, for each country, the breakdown of electricity generation by source (coal, gas, nuclear, hydro, wind, solar, etc.), with a particular focus on renewable technologies. It enables the construction of indicators such as the share of renewables in electricity generation, which serve as proxies for the pace of the energy transition and adaptive capacity.
+
+We first imported the Excel file while skipping the two initial header rows, then renamed the columns to country, indicator, year, and value for clarity. We filled down the country and indicator fields so that each observation has these identifiers, and removed rows where the year was missing. We then converted the year to an integer and transformed the values from character strings with commas into numeric variables. Finally, we kept only country-level observations by excluding regional aggregates such as World, Africa, Asia or Europe.
+
 ```{r}
-Renewable_Electricity_Share<- vroom(here("raw_data", "yearly_full_release_long_format.csv"))
+Renew_Electricity_Share <- read_excel(here("raw_data/RESHARE_20251121-201530.xlsx"),skip=2)
 ```
 
 ```{r}
-Renewable_Electricity_Share |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
+RE_clean <- Renew_Electricity_Share |>
+  rename(
+    country    = 1,
+    indicator = 2,
+    year      = 3,
+    value     = 4
   ) |>
-  knitr::kable()
+  fill(country, indicator, .direction = "down") |>
+  filter(!is.na(year)) |>
+  mutate(
+    year  = as.integer(year),
+    value = value |>
+      as.character() |>
+      str_replace(",", ".") |>
+      as.numeric()
+  )
+
+RE_countries <- RE_clean |>
+  filter(!grepl("World|Africa|Asia|Europe|America|Oceania|OECD|EU|Middle East|Eurasia",country))
+
+```
+
+```{r}
+Renew_summary <- dplyr::bind_rows(
+  Renew_Electricity_Share |>
+    summarise(
+      version          = "Uncleaned",
+      number_of_rows   = n(),
+      number_of_columns = ncol(across()),
+      number_of_NA     = sum(is.na(across()))
+    ),
+  RE_countries |>
+    summarise(
+      version          = "Cleaned (countries only)",
+      number_of_rows   = n(),
+      number_of_columns = ncol(across()),
+      number_of_NA     = sum(is.na(across()))
+    )
+)
+
+Renew_summary |>
+  knitr::kable(caption = "Summary of renewable electricity share dataset (raw vs cleaned)")
 ```
 
 ### 1.3.6 Per capita energy use
 
+This World Bank indicator reports total primary energy consumption per capita, expressed in kilograms of oil equivalent, for a large set of countries over time.
+
 ```{r}
-PC_Energy_Use<- vroom(here("data_file", "Metadata_Country_API_EG.USE.ELEC.KH.PC_DS2_en_csv_v2_129274.csv"))
+PC_Energy_Use <- vroom(
+  here("data_file","API_EG.USE.ELEC.KH.PC_DS2_en_csv_v2_129274.csv"),
+  delim = ",",
+  skip = 4
+) |>
+  select(where(~ !all(is.na(.))))
 ```
 
 ```{r}
@@ -266,147 +310,55 @@ PC_Energy_Use |>
 
 ### 1.3.7 Research and development as a share of GDP
 
+This dataset provides annual data on gross domestic expenditure on research and development (GERD) as a percentage of GDP for many countries. It measures the scale of a country’s investment in innovation and knowledge creation, including in climate- and environment-related technologies, and is therefore a useful proxy for adaptive and transformative capacity.
+
 ```{r}
-RandD_share_of_GDP<- vroom(here("data_file", "API_GB.XPD.RSDV.GD.ZS_DS2_en_csv_v2_216043.csv"), skip=4)
+RD_share_of_GDP <- read_excel("raw_data/OECD.STI.STP,DSD_MSTI@DF_MSTI,,filtered,2025-11-21 21-55-03.xlsx",skip=3)
+
+RD_share_of_GDP_clean <- RD_share_of_GDP |>
+  slice(-1) |>
+  slice(1:(n() - 2)) |>
+  filter(if_any(everything(), ~ !is.na(.))) |>
+  select(where(~ !all(is.na(.))))
+
+RD_share_of_GDP_clean <- RD_share_of_GDP_clean |>
+  dplyr::filter(
+    !`Time period...1` %in% c(
+      "European Union (27 countries from 01/02/2020)",
+      "OECD",
+      "Non-OECD economies"
+    )
+  )
+
+RD_share_of_GDP_clean <- RD_share_of_GDP_clean |>
+  mutate(`Time period...1` = `Time period...1` |>
+           str_replace("^[^A-Za-z]+", "") |>
+           str_squish())
 ```
 
 ```{r}
-RandD_share_of_GDP |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
+RD_summary <- dplyr::bind_rows(
+  RD_share_of_GDP |>
+    summarise(
+      version           = "Uncleaned",
+      number_of_rows    = n(),
+      number_of_columns = ncol(across()),
+      number_of_NA      = sum(is.na(across()))
+    ),
+  RD_share_of_GDP_clean |>
+    summarise(
+      version           = "Cleaned",
+      number_of_rows    = n(),
+      number_of_columns = ncol(across()),
+      number_of_NA      = sum(is.na(across()))
+    )
+)
+
+RD_summary |>
+  knitr::kable(caption = "Summary of R&D share of GDP dataset (raw vs cleaned)")
 ```
 
 ### 1.3.8 ND-Gain vulnerability index
-
-```{r}
-capacity<- vroom(here("data_file/resources/vulnerability", "capacity.csv"))
-```
-
-```{r}
-capacity |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-ecosystems<- vroom(here("data_file/resources/vulnerability", "ecosystems.csv"))
-```
-
-```{r}
-ecosystems |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-exposure<- vroom(here("data_file/resources/vulnerability", "exposure.csv"))
-```
-
-```{r}
-exposure |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-food<- vroom(here("data_file/resources/vulnerability", "food.csv"))
-```
-
-```{r}
-food |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-habitat<- vroom(here("data_file/resources/vulnerability", "habitat.csv"))
-```
-
-```{r}
-habitat |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-health<- vroom(here("data_file/resources/vulnerability", "health.csv"))
-```
-
-```{r}
-health |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-infrastructure<- vroom(here("data_file/resources/vulnerability", "infrastructure.csv"))
-```
-
-```{r}
-infrastructure |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-sensitivity<- vroom(here("data_file/resources/vulnerability", "sensitivity.csv"))
-```
-
-```{r}
-sensitivity |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-vulnerability_delta<- vroom(here("data_file/resources/vulnerability", "vulnerability_delta.csv"))
-```
-
-```{r}
-vulnerability_delta |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
 
 ```{r}
 vulnerability<- vroom(here("data_file/resources/vulnerability", "vulnerability.csv"))
@@ -414,20 +366,6 @@ vulnerability<- vroom(here("data_file/resources/vulnerability", "vulnerability.c
 
 ```{r}
 vulnerability |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
-```
-
-```{r}
-water<- vroom(here("data_file/resources/vulnerability", "water.csv"))
-```
-
-```{r}
-water |> 
   summarise(
     number_of_rows = n(),
     number_of_columns = ncol(across()),
