@@ -88,7 +88,7 @@ The dataset we use reports, for each country and year, the share of the populati
 We first import the Excel file while skipping the first six header lines. We then create a Duration variable from the rows starting with “Duration” and propagate it to all corresponding country rows. Next, we remove header rows, drop the last (non-informative) row, and delete any columns containing only missing values.
 
 ```{r}
-Temperature_exposure<-read_excel("raw_data/OECD.ENV.EPI,DSD_ECH@EXT_TEMP_H,2.0,filtered,2025-11-21 14-59-03.xlsx", skip=6)
+Temperature_exposure<-read_excel(here("raw_data","OECD.ENV.EPI,DSD_ECH@EXT_TEMP_H,2.0,filtered,2025-11-21 14-59-03.xlsx"), skip=6)
 
 Temperature_exposure_clean <- Temperature_exposure |>
   mutate(Duration = if_else(grepl("^Duration", `Time period...1`),
@@ -132,7 +132,7 @@ This dataset contains annual values of the Human Development Index for most coun
 We first imported the HDI Excel file while skipping the first three header rows that contain only documentation. We then removed all observations for which the first column was missing, in order to drop non-country or descriptive rows. Finally, we deleted all variables with more than 20% missing values, keeping only columns with sufficient data coverage for the analysis.
 
 ```{r}
-HDI <- read_excel("raw_data/HDR25_Statistical_Annex_HDI_Table.xlsx.", skip=3)
+HDI <- read_excel(here("raw_data","HDR25_Statistical_Annex_HDI_Table.xlsx."), skip=3)
 
 HDI_clean <- HDI[!is.na(HDI[[1]]), ] |>
   slice(-1) |>
@@ -177,9 +177,7 @@ HDI_summary |>
 This dataset offers long-run series on the income share captured by the top 10% of earners, as well as distributional information on the top 10% of carbon emitters within countries.
 
 ```{r}
-Top_10_income_share <- vroom(here("data_file/WID_Data_Metadata", "WID_Data_21112025-154904.csv"), delim=";",skip=1)
-
-Top_10_income_share_clean <- vroom(here("data_file/WID_Data_Metadata", "WID_Data_21112025-154904.csv"), delim=";",skip=1) |> select(-Percentile)
+Top_10_income_share_clean <- vroom(here("data_file","WID_Data_Metadata", "WID_Data_21112025-154904.csv"), delim=";",skip=1) |> select(-Percentile)
 
 old_names <- names(Top_10_income_share_clean)
 year_only <- str_extract(old_names, "\\d{4}")
@@ -189,14 +187,7 @@ names(Top_10_income_share_clean) <- ifelse(is.na(year_only), old_names, year_onl
 ```
 
 ```{r}
-Top_10_income_share_summary <- dplyr::bind_rows(
-  Top_10_income_share |>
-    summarise(
-      version         = "Uncleaned",
-      number_of_rows  = n(),
-      number_of_columns = ncol(across()),
-      number_of_NA    = sum(is.na(across()))
-    ),
+Top_10_income_share_summary <- bind_rows(
   Top_10_income_share_clean |>
     summarise(
       version         = "Cleaned",
@@ -207,7 +198,7 @@ Top_10_income_share_summary <- dplyr::bind_rows(
 )
 
 Top_10_income_share_summary |>
-  knitr::kable(caption = "Summary of Top 10 income share dataset (raw vs cleaned)")
+  knitr::kable(caption = "Summary of Top 10 income share dataset")
 
 ```
 
@@ -217,7 +208,7 @@ For environmental policy stringency, we used the OECD Environmental Policy Strin
 We first removed all rows and columns that contained only missing values, then dropped the first row, the last row and the last column, which corresponded to non-informative metadata. We also deleted the aggregate line labelled “Non-OECD economies” to keep only country-level observations. Finally, we cleaned the country names in Time period...1 by removing leading symbols and extra spaces so that entries such as “·  Brazil” are standardised as “Brazil”.
 
 ```{r}
-EPS_index <- read_excel("raw_data/OECD.ECO.MAD,DSD_EPS@DF_EPS,1.0,filtered,2025-11-19 13-27-34.xlsx", skip=6)
+EPS_index <- read_excel(here("raw_data","OECD.ECO.MAD,DSD_EPS@DF_EPS,1.0,filtered,2025-11-19 13-27-34.xlsx"), skip=6)
 
 EPS_index_clean <- EPS_index |>
   filter(if_any(everything(), ~ !is.na(.))) |>
@@ -237,7 +228,7 @@ EPS_index_clean <- EPS_index_clean |>
 ```
 
 ```{r}
-EPS_index_summary <- dplyr::bind_rows(
+EPS_index_summary <- bind_rows(
   EPS_index |>
     summarise(
       version          = "Uncleaned",
@@ -265,7 +256,7 @@ Ember’s yearly electricity dataset provides, for each country, the breakdown o
 We first imported the Excel file while skipping the two initial header rows, then renamed the columns to country, indicator, year, and value for clarity. We filled down the country and indicator fields so that each observation has these identifiers, and removed rows where the year was missing. We then converted the year to an integer and transformed the values from character strings with commas into numeric variables. Finally, we kept only country-level observations by excluding regional aggregates such as World, Africa, Asia or Europe.
 
 ```{r}
-RE_Electricity_Share <- read_excel(here("raw_data/RESHARE_20251121-201530.xlsx"),skip=2)
+RE_Electricity_Share <- read_excel(here("raw_data","RESHARE_20251121-201530.xlsx"),skip=2)
 ```
 
 ```{r}
@@ -353,7 +344,7 @@ We downloaded the full time series available (1990–2024 in the MSTI extract).
 We cleaned the R&D expenditure dataset by first removing the initial header row and the last two non-informative rows, then dropping any rows and columns containing only missing values. We renamed the first column as Country and excluded aggregate entries such as the European Union, OECD and Non-OECD economies to keep only country-level observations. Finally, we standardised country names by removing leading symbols and extra spaces so that labels are consistent across datasets.
 
 ```{r}
-RD_share_of_GDP <- read_excel("raw_data/OECD.STI.STP,DSD_MSTI@DF_MSTI,,filtered,2025-11-21 21-55-03.xlsx",skip=3)
+RD_share_of_GDP <- read_excel(here("raw_data","OECD.STI.STP,DSD_MSTI@DF_MSTI,,filtered,2025-11-21 21-55-03.xlsx"),skip=3)
 
 RD_share_of_GDP_clean <- RD_share_of_GDP |>
   slice(-1) |>
@@ -376,7 +367,7 @@ RD_share_of_GDP_clean <- RD_share_of_GDP |>
 ```
 
 ```{r}
-RD_summary <- dplyr::bind_rows(
+RD_summary <- bind_rows(
   RD_share_of_GDP |>
     summarise(
       version           = "Uncleaned",
@@ -400,7 +391,7 @@ RD_summary |>
 ### 1.3.8 ND-Gain vulnerability index
 
 ```{r}
-vulnerability<- vroom(here("data_file/resources/vulnerability", "vulnerability.csv")) |>
+vulnerability<- vroom(here("data_file","resources","vulnerability", "vulnerability.csv")) |>
   rename(Country = 2)
 ```
 
@@ -446,22 +437,6 @@ PC_CO2_summary <- bind_rows(
 
 PC_CO2_summary |>
   knitr::kable(caption = "Summary of CO2 emissions per capita dataset (raw vs cleaned)")
-```
-
-### 1.3.10 World Development Indicator
-
-```{r}
-WDI<- read_excel("data_file/wgidataset.xlsx")
-```
-
-```{r}
-WDI |> 
-  summarise(
-    number_of_rows = n(),
-    number_of_columns = ncol(across()),
-    number_of_NA = sum(is.na(across()))
-  ) |>
-  knitr::kable()
 ```
 
 # 2. Data joining
@@ -557,13 +532,13 @@ non_country_units <- c(
 )
 
 PC_Energy_Use <- PC_Energy_Use |>
-  dplyr::filter(!Country %in% non_country_units)
+  filter(!Country %in% non_country_units)
 
 RE_Electricity_Share_clean <- RE_Electricity_Share_clean |>
-  dplyr::filter(!Country %in% non_country_units)
+  filter(!Country %in% non_country_units)
 
 Top_10_income_share_clean <- Top_10_income_share_clean |>
-  dplyr::filter(!Country %in% non_country_units)
+  filter(!Country %in% non_country_units)
 ```
 
 ## 2.2 Summary of rows and columns
@@ -579,8 +554,7 @@ datasets_overview <- tibble(
     "Per capita energy use",
     "R&D expenditure (% of GDP)",
     "ND-GAIN vulnerability index",
-    "CO2 emissions per capita",
-    "Worldwide Governance Indicators"
+    "CO2 emissions per capita"
   ),
   version = c(
     "Cleaned",
@@ -591,8 +565,7 @@ datasets_overview <- tibble(
     "Cleaned",
     "Cleaned",
     "Original",
-    "Cleaned",
-    "Original"
+    "Cleaned"
   ),
   number_of_rows = c(
     nrow(Temperature_exposure_clean),
@@ -603,8 +576,7 @@ datasets_overview <- tibble(
     nrow(PC_Energy_Use),
     nrow(RD_share_of_GDP_clean),
     nrow(vulnerability),
-    nrow(PC_CO2_emissions_clean),
-    nrow(WDI)
+    nrow(PC_CO2_emissions_clean)
   ),
   number_of_columns = c(
     ncol(Temperature_exposure_clean),
@@ -615,8 +587,7 @@ datasets_overview <- tibble(
     ncol(PC_Energy_Use),
     ncol(RD_share_of_GDP_clean),
     ncol(vulnerability),
-    ncol(PC_CO2_emissions_clean),
-    ncol(WDI)
+    ncol(PC_CO2_emissions_clean)
   )
 )
 
@@ -675,6 +646,21 @@ Top_10_income_share_clean2 <- Top_10_income_share_clean |>
 ```
 
 ## 2.4 Adding countrycode as key
+```{r}
+all_countries <- c(
+  PC_Energy_Use$Country,
+  RE_Electricity_Share_clean$Country,
+  Top_10_income_share_clean$Country
+) |> 
+  unique()
+
+unused_overall <- setdiff(non_country_units, all_countries)
+used_overall   <- intersect(non_country_units, all_countries)
+
+unused_overall   # jamais vus nulle part
+used_overall     # effectivement présents dans au moins un jeu de données
+
+```
 
 ```{r add_iso3}
 library(countrycode)
@@ -793,7 +779,6 @@ datasets_long_iso <- list(
 ```
 
 ## 2.5 Creating panel data
-
 ```{r create_panel}
 panel_full <- reduce(
   datasets_long_iso,
@@ -857,24 +842,15 @@ matched_countries <- ref_names |>
   arrange(Country_std)
 ```
 
-## 2.6 Countries without iso3c match
+```{r}
+sapply(country_list, \(df) dplyr::n_distinct(df$iso3c))
+country_coverage_wide |>
+  summarise(across(-iso3c, ~ sum(.)))
+countries_not_matched <- country_coverage_wide |>
+  filter(!(iso3c %in% matched_iso3))
 
-```{r unmatched_iso3}
-unmatched_iso3_countries <- country_list |>
-  imap_dfr(
-    ~ .x |>
-      filter(is.na(iso3c)) |>
-      distinct(Country) |>
-      mutate(dataset = .y)
-  ) |>
-  arrange(Country, dataset)
+countries_not_matched
 
-unmatched_countries_unique <- unmatched_iso3_countries |>
-  distinct(Country) |>
-  arrange(Country)
-
-unmatched_iso3_countries |>
-  knitr::kable(caption = "Countries without iso3c match (by dataset)")
 ```
 
 # 3. Construction of the climate vulnerability dex
@@ -883,3 +859,4 @@ unmatched_iso3_countries |>
 ## 3.3 Weighting schemes and composite nidex
 ## 3.4 Robustness checks
 # 4. Descriptive analysis and results
+
