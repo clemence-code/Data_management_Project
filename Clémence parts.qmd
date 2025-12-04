@@ -723,18 +723,7 @@ matched_countries <- ref_names |>
   arrange(Country_std)
 ```
 
-```{r}
-sapply(country_list, \(df) dplyr::n_distinct(df$iso3c))
-country_coverage_wide |>
-  summarise(across(-iso3c, ~ sum(.)))
-countries_not_matched <- country_coverage_wide |>
-  filter(!(iso3c %in% matched_iso3))
-
-countries_not_matched
-
-```
-
-# 3. Construction of the climate vulnerability dex
+# 3. Construction of the climate vulnerability index
 ## 3.1 Normalisation of indicators
 ## 3.2 Aggregation within dimensions
 ## 3.3 Weighting schemes and composite nidex
