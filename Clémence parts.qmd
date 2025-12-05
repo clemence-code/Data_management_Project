@@ -35,18 +35,21 @@ The third dimension, Adaptive Capacity, captures the ability of a country to ant
 Methodologically, the project will involve selecting, normalising and aggregating indicators within each dimension, and then combining the three dimensions into a composite index of climate vulnerability. We will carefully examine correlations between variables to avoid redundancy and ensure that each indicator brings distinct information. Different weighting schemes (equal weights, data-driven weights, or robustness checks with alternative specifications) may be compared. Finally, the resulting index will be analysed descriptively to identify patterns of vulnerability across countries (for example, highly exposed but relatively resilient countries versus highly sensitive and poorly equipped ones).
 
 ## 1.2 Description of data sources
+
 -   [International monetary fund](https://www.imf.org/en/home) : The Macroeconomic Climate Indicators Dashboard (climatedata.imf.org) is online resource from the International Monetary Fund (IMF) that provides data-driven insights at the intersection of climate and the economy. It features a range of indicators, developed in collaboration with other international organizations, which demonstrate how economic activity is impacting climate change and what governments are doing to mitigate these effects.
-    - [Environmental Protection Expenditures](https://climatedata.imf.org/datasets/d22a6decd9b147fd9040f793082b219b/explore)
-    - [Annual Surface Temperature Change](https://climatedata.imf.org/pages/climatechange-data)
-- [United Nations Development Programme (UNDP) - Human development Report Office](https://hdr.undp.org/) : UNDP is the UN’s global development network, working in around 170 countries and territories to eradicate poverty, reduce inequalities and build resilient institutions. Within UNDP, the Human Development Report Office (HDRO) is responsible for producing the annual Human Development Report and developing the Human Development Index (HDI) and related indicators, which provide a multidimensional view of development by combining health, education and income measures. 
-  - [Index of Human Development (1990-2025)](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
+    -   [Environmental Protection Expenditures](https://climatedata.imf.org/datasets/d22a6decd9b147fd9040f793082b219b/explore)
+    -   [Annual Surface Temperature Change](https://climatedata.imf.org/pages/climatechange-data)
+-   [United Nations Development Programme (UNDP) - Human development Report Office](https://hdr.undp.org/) : UNDP is the UN’s global development network, working in around 170 countries and territories to eradicate poverty, reduce inequalities and build resilient institutions. Within UNDP, the Human Development Report Office (HDRO) is responsible for producing the annual Human Development Report and developing the Human Development Index (HDI) and related indicators, which provide a multidimensional view of development by combining health, education and income measures.
+    -   [Index of Human Development (1990-2025)](https://hdr.undp.org/data-center/human-development-index#/indicies/HDI)
 -   [World Inequality Database](https://wid.world/) : The World Inequality Lab is a research centre based at the Paris School of Economics, bringing together economists and social scientists to study global and national inequalities in income, wealth and carbon emissions. It manages and develops the World Inequality Database (WID.world), which compiles harmonised, long-run series on the distribution of income and wealth, based on a combination of tax data, national accounts, surveys and other sources, with the aim of informing public debate and policy on inequality. [Income share of the top 10% and top 10% carbon emitters (1980-2023)](https://wid.world/data/)
 -   [International Renewable Energy Agency](https://www.irena.org/) : IRENA is an intergovernmental agency that supports countries worldwide in their transition to a sustainable energy future by promoting renewable energy, providing data and analysis, and advising on energy policies and investments. [Electricity production from renewable sources (2000-2024)](https://pxweb.irena.org/pxweb/en/IRENASTAT)
 -   [World bank](https://data.worldbank.org/) : The World Bank is an international financial institution headquartered in Washington, D.C., whose core mandate is to reduce poverty and promote sustainable development in low- and middle-income countries through financial support, technical assistance and policy advice. Beyond lending, the World Bank is one of the world’s main producers and disseminators of development statistics.
     -   [Per capita energy use (1990-2023)](https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5)
 
 ## 1.3 Description of the data file
+
 ### 1.3.0 Set up
+
 ```{r}
 library(vroom)
 library(here)
@@ -83,7 +86,6 @@ if (length(list.files(target_dir)) == 0) {
 ### 1.3.1 Temperature change (IMF)
 
 https://climatedata.imf.org/pages/climatechange-data
-
 
 ```{r}
 Temperature_change<-vroom(here("raw_data","Indicator_3_1_Climate_Indicators_Annual_Mean_Global_Surface_Temperature_577579683071085080.csv"))
@@ -536,6 +538,7 @@ Top_10_income_share_clean2 <- Top_10_income_share_clean |>
 ```
 
 ## 2.4 Adding countrycode as key
+
 ```{r}
 all_countries <- c(
   PC_Energy_Use$Country,
@@ -661,6 +664,7 @@ datasets_long_iso <- list(
 ```
 
 ## 2.5 Creating panel data
+
 ```{r create_panel}
 panel_full <- reduce(
   datasets_long_iso,
@@ -724,9 +728,13 @@ matched_countries <- ref_names |>
 ```
 
 # 3. Construction of the climate vulnerability index
-## 3.1 Normalisation of indicators
-## 3.2 Aggregation within dimensions
-## 3.3 Weighting schemes and composite nidex
-## 3.4 Robustness checks
-# 4. Descriptive analysis and results
 
+## 3.1 Normalisation of indicators
+
+## 3.2 Aggregation within dimensions
+
+## 3.3 Weighting schemes and composite nidex
+
+## 3.4 Robustness checks
+
+# 4. Descriptive analysis and results
