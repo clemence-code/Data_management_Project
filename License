@@ -11,4 +11,4 @@ This project utilizes public data from international organizations. The raw data
 | **Energy/CO2** | [World Bank Open Data](https://data.worldbank.org/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | **Reference** | [ND-GAIN Index](https://gain.nd.edu/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 
-**Note:** The code in this repository is licensed under the MIT License, but this license does not extend to the raw data files contained in the `raw_data/` directory.
+**Note:** The code in this repository is licensed under the MIT License, but this license does not extend to the raw data files contained in the `raw_data/` and `data_file` directories.
